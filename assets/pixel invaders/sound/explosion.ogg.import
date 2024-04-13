@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyvw6pn0lktx8"
+path="res://.godot/imported/explosion.ogg-f59a049b09ed5acc2b8bab42bb2e1ef8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/pixel invaders/sound/explosion.ogg"
+dest_files=["res://.godot/imported/explosion.ogg-f59a049b09ed5acc2b8bab42bb2e1ef8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

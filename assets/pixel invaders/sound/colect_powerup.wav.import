@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bohc1e0igyben"
+path="res://.godot/imported/colect_powerup.wav-08ab3cd1b6490de71b2cd0f938958762.sample"
+
+[deps]
+
+source_file="res://assets/pixel invaders/sound/colect_powerup.wav"
+dest_files=["res://.godot/imported/colect_powerup.wav-08ab3cd1b6490de71b2cd0f938958762.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3s6dy78hakc4"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_fw3dt"]
+[ext_resource type="Texture2D" uid="uid://1ra0ubvutl4a" path="res://assets/Mini Pixel Pack 3/Player ship/Player_ship (16 x 16).png" id="2_mv813"]
+[ext_resource type="Texture2D" uid="uid://c86cgg1enodt5" path="res://assets/Mini Pixel Pack 3/Player ship/Boosters (16 x 16).png" id="3_lbd77"]
+[ext_resource type="Texture2D" uid="uid://di1bkgwfj7gsk" path="res://assets/Mini Pixel Pack 3/Player ship/Boosters_right (16 x 16).png" id="4_ksb52"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihkw3"]
+
+[sub_resource type="Animation" id="Animation_n2ayu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_5x34s"]
+resource_name = "turnidle"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 1, 1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_cy7n5"]
+resource_name = "turnleft"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fl483"]
+resource_name = "turnright"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("corpo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 2, 2, 2, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rqd3"]
+_data = {
+"RESET": SubResource("Animation_n2ayu"),
+"turnidle": SubResource("Animation_5x34s"),
+"turnleft": SubResource("Animation_cy7n5"),
+"turnright": SubResource("Animation_fl483")
+}
+
+[node name="Nave" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(142, 98)
+script = ExtResource("1_fw3dt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ihkw3")
+
+[node name="corpo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_mv813")
+hframes = 3
+frame = 2
+
+[node name="booster" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 10)
+scale = Vector2(0.4375, 0.375)
+texture = ExtResource("3_lbd77")
+
+[node name="boosterright" type="Sprite2D" parent="."]
+position = Vector2(1, 10)
+scale = Vector2(0.281248, 0.28125)
+texture = ExtResource("4_ksb52")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2rqd3")
+}
