@@ -19,6 +19,18 @@ func _process(delta) -> void:
 		animations.play("turnright")
 	else: 
 		animations.play("turnidle")
+	atirar()
+
+func shoot():
+	
+	const BULLET = preload("res://Actors/bullet.tscn")
+	var new_bullet = BULLET.instantiate()
+	owner.add_child(new_bullet)
+	new_bullet.position = %Marker2D.global_position
+	
+func atirar():
+	if Input.is_action_just_pressed("action"):
+		shoot()
 		 
 		
 	

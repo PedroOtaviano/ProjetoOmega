@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://c0ya5qfoedghh"]
+[gd_scene load_steps=2 format=3 uid="uid://c0ya5qfoedghh"]
+
+[ext_resource type="PackedScene" uid="uid://d3s6dy78hakc4" path="res://Actors/nave.tscn" id="1_kskx8"]
 
 [node name="Jogo" type="Node2D"]
+
+[node name="Nave" parent="." instance=ExtResource("1_kskx8")]
+position = Vector2(128, 139)
