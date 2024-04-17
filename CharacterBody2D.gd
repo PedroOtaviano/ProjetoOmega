@@ -1,7 +1,8 @@
 extends Node2D
-var speed:int = 150
+var speed:int = 300
 var direction := Vector2(0,0)
 var velocity = 0.0
+var health := 10
 @onready var animations = $AnimationPlayer
 
 func _ready():
@@ -22,7 +23,6 @@ func _process(delta) -> void:
 	atirar()
 
 func shoot():
-	
 	const BULLET = preload("res://Actors/bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	owner.add_child(new_bullet)
@@ -31,15 +31,6 @@ func shoot():
 func atirar():
 	if Input.is_action_just_pressed("action"):
 		shoot()
-		 
 		
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
+func player_take_damage():
+	pass

@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0ya5qfoedghh"]
+[gd_scene load_steps=4 format=3 uid="uid://c0ya5qfoedghh"]
 
 [ext_resource type="PackedScene" uid="uid://d3s6dy78hakc4" path="res://Actors/nave.tscn" id="1_kskx8"]
+[ext_resource type="PackedScene" uid="uid://drwr0iswxrmol" path="res://Actors/enemy.tscn" id="2_3k2cf"]
+
+[sub_resource type="Curve2D" id="Curve2D_ya7q0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -28.9403, 29, 0, 0, 0, 0, -26, -25, 0, 0, 0, 0, 451, -22, 0, 0, 0, 0, 450.01, 31)
+}
+point_count = 4
 
 [node name="Jogo" type="Node2D"]
 
 [node name="Nave" parent="." instance=ExtResource("1_kskx8")]
 position = Vector2(128, 139)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(13, 7)
+scale = Vector2(1.00206, 1)
+curve = SubResource("Curve2D_ya7q0")
+
+[node name="Enemy" parent="." instance=ExtResource("2_3k2cf")]
+position = Vector2(266, 80)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_3k2cf")]
+position = Vector2(175, 37)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_3k2cf")]
+position = Vector2(76, 23)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_3k2cf")]
+position = Vector2(377, 13)
